@@ -4,6 +4,7 @@ import Header from '/src/components/Header/Header.jsx';
 import TagList from './components/TagList/TagList';
 import PictureList from './components/PictureList/PictureList';
 import MissionStatement from './components/MissionStatement/MissionStatement';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [filterStatus, setFilterStatus] = useState(false)
@@ -23,6 +24,7 @@ function App() {
       {filterStatus ? <TagList handleTagClick={handleTagClick} className="taglist"/> : null}
       <MissionStatement className="mission"/>
       <PictureList selectedTag={selectedTag} className="pictures"/>
+      <Footer />
     </>
   )
 }
