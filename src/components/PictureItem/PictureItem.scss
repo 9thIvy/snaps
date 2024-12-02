@@ -1,0 +1,46 @@
+@use '/src/styles/partials/colours' as *;
+@use '/src/styles/partials/breakpoints' as *;
+.picture-item{
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 0 1rem;
+    position: relative;
+    @include tablet{
+        max-width: 50%;
+    }
+    &__image{
+        border-radius: 10px;
+        width: 100%;
+        object-fit: cover;
+
+    }
+    &__author{
+        position: absolute;
+        bottom:5rem;
+        // left: 80%;
+        background-color: $Sage;
+        padding: 0.5rem 0.8rem;
+        font-family: Outfit;
+        background-color: $Sea-Green;
+        border: .125rem solid $Sea-Green;
+        border-radius: 3.125rem 0 0 3.125rem;
+    }
+    &__tags{
+        display: flex;
+        gap: 1rem;
+        background-color: $Sage;
+
+    }
+    &__tag{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: .125rem solid $Sea-Green;
+        border-radius: 3.125rem;
+        max-height: 0.5rem;
+        padding: 1rem;
+        margin: .5rem;
+
+    }
+}

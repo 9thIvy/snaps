@@ -4,7 +4,7 @@ function PictureItem(props){
     return(
         <li className="picture-item">
             <img src={props.picture.photo} alt="" className="picture-item__image" />
-            <p className="picture-item__author"></p>
+            <p className="picture-item__author">{props.picture.photographer}</p>
             <ul className="picture-item__tags">
                 {props.picture.tags.map((tag, index) =>
                 <li key={index} className="picture-item__tag">

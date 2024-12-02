@@ -1,8 +1,34 @@
 @use "/src/styles/partials/global.scss" as *;
+@use "/src/styles/partials/colours.scss" as *;
 
 .tag-list{
+    background-color: $Sage;
+    padding: 1rem;
     font-family: Outfit;
     &__heading{
         @include heading;
     }
+
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+    &__tag{
+        color: $Forest-Green;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: .125rem solid $Forest-Green;
+        border-radius: 0.5rem;
+        max-height: 0.5rem;
+        padding: 1rem;
+        margin: .5rem;
+    }
+}
+
+.clicked{
+    background-color: $Forest-Green;
+    color: white;
 }

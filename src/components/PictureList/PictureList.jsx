@@ -5,9 +5,7 @@ import { useState } from "react";
 
 function PictureList(props){
     const [pictures, setPicture] = useState(pictureData);
-    console.log("picture list props: ",props);
     const {selectedTag} = props;
-    console.log("tag: ", selectedTag);
     
     let filteredPictures;
 

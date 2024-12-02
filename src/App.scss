@@ -1,6 +1,9 @@
 @use '/src/styles/partials/global' as *;
 @use '/src/styles/partials/colours' as *;
+@use '/src/styles/partials/breakpoints' as *;
 
 body{
     background-color: $Pistachio;
+
 }
+

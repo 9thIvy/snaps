@@ -3,6 +3,7 @@ import '/src/App.scss';
 import Header from '/src/components/Header/Header.jsx';
 import TagList from './components/TagList/TagList';
 import PictureList from './components/PictureList/PictureList';
+import MissionStatement from './components/MissionStatement/MissionStatement';
 
 function App() {
   const [filterStatus, setFilterStatus] = useState(false)
@@ -18,10 +19,10 @@ function App() {
 
   return (
     <>
-      <Header setStatus={handleStatusClick}/>
-      <p>Selected Tag: {selectedTag}</p>
-      {filterStatus ? <TagList handleTagClick={handleTagClick} /> : null}
-      <PictureList selectedTag={selectedTag} />
+      <Header setStatus={handleStatusClick} className="header-class"/>
+      {filterStatus ? <TagList handleTagClick={handleTagClick} className="taglist"/> : null}
+      <MissionStatement className="mission"/>
+      <PictureList selectedTag={selectedTag} className="pictures"/>
     </>
   )
 }

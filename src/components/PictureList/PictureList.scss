@@ -1,0 +1,14 @@
+@use "/src/styles/partials/colours" as *;
+@use "/src/styles/partials/breakpoints" as *;
+.gallery{
+    background-color: $Pistachio;
+}
+
+.picture-list{
+    display: flex;
+    flex-direction: column;
+    @include tablet{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
