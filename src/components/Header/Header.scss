@@ -1,0 +1,18 @@
+@use '/src/styles/partials/global' as *;
+@use '/src/styles/partials/typography' as *;
+@use '/src/styles/partials/colours' as *;
+@use '/src/styles/partials/breakpoints' as *;
+h1{
+    margin-top: 0;
+}
+
+.header{
+    padding: 1rem 0 0 1rem;
+    @include tablet{
+        padding: 1.5rem 0 0 1.5rem;
+    }
+    @include desktop{
+        padding: 5rem 0 0 5rem;
+    }
+    &{background-color: $Sage};
+}

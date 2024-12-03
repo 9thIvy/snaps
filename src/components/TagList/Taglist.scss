@@ -1,0 +1,8 @@
+@use "/src/styles/partials/global.scss" as *;
+
+.tag-list{
+    font-family: Outfit;
+    &__heading{
+        @include heading;
+    }
+}
