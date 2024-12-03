@@ -8,15 +8,25 @@ function PictureList(props){
     console.log("picture list props: ",props);
     const {selectedTag} = props;
     console.log("tag: ", selectedTag);
+    
+    let filteredPictures;
 
-    const filteredPictures = pictures.filter(picture => 
-        picture.tags && picture.tags.includes(selectedTag));
+    
+    if(selectedTag !== ""){
+        filteredPictures = pictures.filter(picture => 
+           picture.tags && picture.tags.includes(selectedTag));
+    }
+    else{
+        filteredPictures = pictures;
+    }
     return(
+        <section className="gallery">
         <ul className="picture-list">
             {filteredPictures.map((picture) =>{
                 return <PictureItem key={picture.id} picture={picture} />;
             })}
         </ul>
+        </section>
     );
 }
 
