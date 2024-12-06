@@ -12,23 +12,36 @@
         border-radius: 10px;
         width: 100%;
         object-fit: cover;
+        border: .125rem solid $Sea-Green;
 
     }
     &__author{
         position: absolute;
-        bottom:5rem;
-        // left: 80%;
-        background-color: $Sage;
+        margin: 0;
+        bottom: 3.3rem;
+        right: 0;
         padding: 0.5rem 0.8rem;
         font-family: Outfit;
-        background-color: $Sea-Green;
-        border: .125rem solid $Sea-Green;
-        border-radius: 3.125rem 0 0 3.125rem;
+        font-weight: 500;
+        background-color: $Pistachio;
+        border-right: .125rem solid $Sea-Green;
+        border-radius: 10px 0 0 0rem;
     }
     &__tags{
+        width: 100%;
+        left:0;
+        position: absolute;
+        margin: 0;
+        bottom: 0.3rem;
         display: flex;
         gap: 1rem;
-        background-color: $Sage;
+        background-color: $Pistachio;
+        border-left: .125rem solid $Sea-Green;
+        border-right: .125rem solid $Sea-Green;
+        border-bottom: .125rem solid $Sea-Green;
+        border-radius: 0  0 10px 10px;
+
+
 
     }
     &__tag{
@@ -41,6 +54,10 @@
         max-height: 0.5rem;
         padding: 1rem;
         margin: .5rem;
+    }
+
+    &__meta{
+        position: relative;
 
     }
 }
