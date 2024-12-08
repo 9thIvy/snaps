@@ -3,7 +3,7 @@
 .picture-item{
     display: flex;
     flex-direction: column;
-    padding: 0 1rem 0 1rem;
+    padding:1rem;
     position: relative;
     @include tablet{
         max-width: 50%;
