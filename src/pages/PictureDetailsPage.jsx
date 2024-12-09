@@ -1,31 +1,52 @@
 import {useParams, Navigate} from "react-router-dom";
-import pictureData from "/src/data/photos.json";
+import {useState, useEffect} from "react";
+import {getPhotoByID} from "/src/scripts/api.js"; 
 import DetailsPictureItem from "/src/components/DetailsPictureItem/DetailsPictureItem";
 import Footer from '/src/components/Footer/Footer';
 import DetailsPageHeader from '/src/components/DetailsPageHeader/DetailsPageHeader.jsx';
 import {Link} from "react-router-dom";
 
+function PictureDetailsPage() {
+    const { pictureId } = useParams();
+    const [picture, setPicture] = useState(null);
+    const [isLoading, setLoading] = useState(true);
 
+    useEffect(() => {
+        const fetchPictureData = async () => {
+            try{
+                const response = await getPhotoByID(pictureId); 
+                setPicture(response); 
+            }
+            catch(error){
+                console.log(error);
+            }
+            finally{
+                setLoading(false);
+            }
+            
+        };
 
-function PictureDetailsPage(){
-    const {pictureId} = useParams();
-    const picture = pictureData.find((picture) => picture.id === pictureId);
+        fetchPictureData();
+    }, [pictureId]);
 
-    if(!picture){
-        return <Navigate to="/HomePage"/>;
+    if(isLoading){
+        return <div>Loading</div>
     }
-    return(
-    <>
-        <Link to="/">
-            <DetailsPageHeader />
-        </Link>
-        <DetailsPictureItem key={picture.id} picture={picture} />
-        <Footer />
-    </>
+
+
+    if (!picture) {
+        return <Navigate to="/HomePage" />;
+    }
+
+    return (
+        <>
+            <Link to="/">
+                <DetailsPageHeader />
+            </Link>
+            <DetailsPictureItem key={picture.id} picture={picture} />
+            <Footer />
+        </>
     );
 }
 
-export default PictureDetailsPage
-
-
-
+export default PictureDetailsPage;
