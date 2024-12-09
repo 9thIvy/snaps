@@ -1,0 +1,71 @@
+@use '/src/styles/partials/colours' as *;
+@use '/src/styles/partials/breakpoints' as *;
+.picture-item{
+    display: flex;
+    flex-direction: column;
+    padding:1rem;
+    position: relative;
+    @include tablet{
+        max-width: 50%;
+    }
+    &__image{
+        border-radius: 10px;
+        width: 100%;
+        object-fit: cover;
+        border: .125rem solid $Sea-Green;
+
+    }
+    &__author{
+        position: absolute;
+        margin: 0;
+        bottom: 3.3rem;
+        right: 0;
+        padding: 0.5rem 0.8rem;
+        font-family: Outfit;
+        font-weight: 500;
+        background-color: $Pistachio;
+        border-right: .125rem solid $Sea-Green;
+        border-radius: 10px 0 0 0rem;
+    }
+    &__tags{
+        width: 100%;
+        left:0;
+        position: absolute;
+        margin: 0;
+        bottom: 0.3rem;
+        display: flex;
+        gap: 1rem;
+        background-color: $Pistachio;
+        border-left: .125rem solid $Sea-Green;
+        border-right: .125rem solid $Sea-Green;
+        border-bottom: .125rem solid $Sea-Green;
+        border-radius: 0  0 10px 10px;
+
+
+
+    }
+    &__tag{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border: .125rem solid $Sea-Green;
+        border-radius: 3.125rem;
+        max-height: 0.5rem;
+        padding: 1rem;
+        margin: .5rem;
+    }
+
+    &__meta{
+        position: relative;
+
+    }
+
+    &__likes{
+        position: absolute;
+        bottom: 1;
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+    }
+}

@@ -38,9 +38,9 @@ function Footer(){
         
         <div className='footer__legal'>
             <p>© 2024 Snaps</p>
-            <a>Terms</a>
-            <a>Privacy</a>
-            <a>Cookies</a>
+            <p>Terms</p>
+            <p>Privacy</p>
+            <p>Cookies</p>
         </div>
         </section>
     );

@@ -1,5 +1,12 @@
 @use "/src/styles/partials/colours" as *;
 @use "/src/styles/partials/breakpoints" as *;
+
+a{
+    @include tablet{
+        width: 50%;
+    }
+}
+
 .gallery{
     background-color: $Pistachio;
 }

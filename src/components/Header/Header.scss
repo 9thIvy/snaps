@@ -46,4 +46,15 @@ button{
     &__title{
         font-weight: 500;
     }
+    &__home{
+        margin-right: 1rem;
+        display: flex;
+        gap: 1rem;
+        color: $Forest-Green;
+        font-family: Outfit;
+    }
+}
+
+.arrow-icon{
+    width: 3rem;
 }
