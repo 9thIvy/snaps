@@ -45,7 +45,7 @@ export const getPhotoByID = (id) =>{
 export const getComments = (id) =>{
 	return api.get(`/photos/${id}/comments`);
 }
-export const postComment = (commentObject, id)=>{
+export const postComment = (id, commentObject )=>{
 	return api.post(`/photos/${id}/comments`, commentObject);
 }
 export const getTags = () =>{

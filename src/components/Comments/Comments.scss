@@ -1,0 +1,136 @@
+@use '/src/styles/partials/breakpoints' as *;
+@use '/src/styles/partials/colours' as *;
+
+
+label{
+    font-family: Outfit;
+    font-weight: 500;
+}
+
+.date{
+    font-family: Outfit;
+    font-weight: 500;
+    color: $Forest-Green
+}
+
+.comment-section{
+    
+    display: flex;
+    flex-direction: column;
+
+    &__user-name{
+        font-family: Outfit;
+        font-weight: 500;
+        color: $Forest-Green
+    }
+
+    &__comment-content{
+        font-family: Outfit;
+        font-weight: 500;
+    }
+
+    &__container{
+        margin: 1rem;
+    }
+
+    &__icon-wrapper{
+        @include mobile{
+            display:flex;
+        }
+    }
+    @include mobile{
+        margin: 2rem 1rem 1rem 1rem;
+    }
+
+
+
+
+    &__horizontal-flex{
+        @include mobile{
+            display: flex;
+            justify-content: center;
+            
+        }
+    }
+
+    &__user-input{
+        padding: 1rem;
+        background-color: white;
+        border: .125rem solid $Sage;
+
+        width: 100%;
+        border-radius: 4%;
+        @include mobile{
+            padding: .75rem;
+            margin-bottom: 1rem;
+        }
+
+        &--comment-box{
+            padding: 1rem;
+            background-color: white;
+            border: .125rem solid $Sage;
+
+            width: 100%;
+            border-radius: 4%;
+            @include mobile{
+                padding-bottom: 3.5rem;
+                margin-bottom: 1rem;
+            }
+
+        }
+
+
+
+        &:active{
+            border-color: $Sage;
+        }
+
+        &--error{
+            border-color: $Error;
+        }
+    }
+
+    &__submit-button{
+        font-family: Outfit;
+        border-radius: .625rem;
+        background-color: $Forest-Green;
+        color:white;
+        font-weight: 500;
+        margin:0;
+        @include mobile{
+            width: 100%;
+        }
+        @include tablet{
+            width: auto;
+            
+        }
+        
+    }
+
+    &__comment{
+        border-bottom: .125rem solid $Sea-Green;
+        @include tablet{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+        }
+        &-meta{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__container{
+        @include tablet{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}
+
+.button-box{
+    display: flex;
+    justify-content: flex-end;
+}

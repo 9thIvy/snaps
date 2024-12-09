@@ -5,9 +5,10 @@ import DetailsPictureItem from "/src/components/DetailsPictureItem/DetailsPictur
 import Footer from '/src/components/Footer/Footer';
 import DetailsPageHeader from '/src/components/DetailsPageHeader/DetailsPageHeader.jsx';
 import {Link} from "react-router-dom";
+import Comments from "/src/components/Comments/Comments.jsx";
 
 function PictureDetailsPage() {
-    const { pictureId } = useParams();
+    const {pictureId} = useParams();
     const [picture, setPicture] = useState(null);
     const [isLoading, setLoading] = useState(true);
 
@@ -44,6 +45,7 @@ function PictureDetailsPage() {
                 <DetailsPageHeader />
             </Link>
             <DetailsPictureItem key={picture.id} picture={picture} />
+            <Comments pictureId={picture.id} />
             <Footer />
         </>
     );
