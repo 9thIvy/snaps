@@ -6,7 +6,7 @@
     padding:1rem;
     position: relative;
     @include tablet{
-        max-width: 50%;
+        max-width: 100%;
     }
     &__image{
         border-radius: 10px;

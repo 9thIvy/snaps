@@ -23,11 +23,11 @@ function PictureList(props){
         <ul className="picture-list">
             {filteredPictures.map((picture) =>{
                 return(
-                    <div key={picture.id}>
-                        <Link to={`/picture/${picture.id}`}>
+                    // <div key={picture.id}>
+                        <Link key={picture.id} to={`/picture/${picture.id}`}>
                         <PictureItem  picture={picture} />
                         </Link>
-                    </div>
+                    // </div>
                 );
             })}
         </ul>

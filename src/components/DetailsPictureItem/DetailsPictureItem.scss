@@ -1,6 +1,6 @@
 @use '/src/styles/partials/colours' as *;
 @use '/src/styles/partials/breakpoints' as *;
-.picture-item{
+.detail-item{
     display: flex;
     flex-direction: column;
     padding:1rem;

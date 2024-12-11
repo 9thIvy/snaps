@@ -35,6 +35,7 @@ function Comments(props){
         const day = String(date.getDate()).padStart(2, '0');
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const year = date.getFullYear();
+        console.log(`${day}/${month}/${year}`)
         return `${day}/${month}/${year}`;
     }
 
@@ -51,8 +52,9 @@ function Comments(props){
         console.log("json: ",jsonComment);
         try{
             setLoading(true);
-            await postComment(props.pictureId, jsonComment);
-            setComments((prevComments) => [...prevComments, newComment]);
+            let response = await postComment(props.pictureId, jsonComment);
+            console.log("response: ", response);
+            setComments((prevComments) => [...prevComments, response]);
             setUsername('');
             setContent('');
         }
@@ -67,9 +69,6 @@ function Comments(props){
             return <div>Loading</div>
           }
     };
-
-
-    
 
     return(
         <>
@@ -104,7 +103,7 @@ function Comments(props){
                 {comments.map((comment, index) => (
                     <div key={index} className="comment-section__comment">
                         <div className="comment-section__icon-wrapper">
-                            <div>
+                            <div className='comment-section__comment-wrapper'>
                                 <div className="comment-section__comment-meta">
                                     <p className="comment-section__user-name">{comment.name}</p>
                                     <p className="date">{formatDate(comment.timestamp)}</p>

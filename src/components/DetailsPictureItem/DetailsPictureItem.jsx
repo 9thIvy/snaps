@@ -1,6 +1,6 @@
 import "/src/components/DetailsPictureItem/DetailsPictureItem.scss";
 
-function DetailsPictureItem(props){
+function DetailsdetailItem(props){
 
     const formatDate = (unixTime) => {
         const date = new Date(unixTime);
@@ -11,17 +11,17 @@ function DetailsPictureItem(props){
     }
 
     return(
-        <li className="picture-item">
-            <div className="picture-item__meta">
-                <img src={props.picture.photo} alt="" className="picture-item__image" />
-                <p className="picture-item__author">{props.picture.photographer}</p>
-                <ul className="picture-item__tags">
+        <li className="detail-item">
+            <div className="detail-item__meta">
+                <img src={props.picture.photo} alt="" className="detail-item__image" />
+                <p className="detail-item__author">{props.picture.photographer}</p>
+                <ul className="detail-item__tags">
                     {props.picture.tags.map((tag, index) =>
-                    <li key={index} className="picture-item__tag">
+                    <li key={index} className="detail-item__tag">
                         {tag}
                     </li>)}
                 </ul>
-                    <div className="picture-item__likes">
+                    <div className="detail-item__likes">
                         <object className="likes-icon" type="image/svg+xml" data="/src/assets/images/icons/Like_Outline.svg"></object>
                         <p className="likes">{props.picture.likes} likes</p>
                         <p>{formatDate(props.picture.timestamp)}</p>
@@ -30,4 +30,4 @@ function DetailsPictureItem(props){
         </li>
     );
 }
-export default DetailsPictureItem
+export default DetailsdetailItem
