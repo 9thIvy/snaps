@@ -1,6 +1,7 @@
 import "/src/components/PictureItem/PictureItem.scss";
 
 function PictureItem(props){
+    console.log(props);
     return(
         <li className="picture-item">
             <div className="picture-item__meta">

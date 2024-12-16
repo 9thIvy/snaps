@@ -1,4 +1,3 @@
-// import tagData from "/src/data/tags.json";
 import "/src/components/TagList/Taglist.scss";
 import {useEffect, useState} from 'react';
 import {getTags} from '/src/scripts/api.js';

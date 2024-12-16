@@ -1,12 +1,36 @@
 import "/src/components/PictureList/PictureList.scss";
-import pictureData from "/src/data/photos.json";
+// import pictureData from "/src/data/photos.json";
 import PictureItem from "/src/components/PictureItem/PictureItem";
-import { useState } from "react";
+import {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
+import {getPhotos} from '/src/scripts/api.js';
+
 
 function PictureList(props){
-    const [pictures, setPicture] = useState(pictureData);
+    const [isLoading, setLoading] = useState(true);
+    const [pictures, setPicture] = useState([]);
     const {selectedTag} = props;
+
+    useEffect(()=>{
+        const fetchPictures = async () => {
+            try{
+                const fetchPictureData = await getPhotos();
+                setPicture(fetchPictureData);
+            }
+            catch(error){
+                console.log(error);
+            }
+            finally{
+            setLoading(false);
+            }
+        };
+        fetchPictures();
+    },[]);
+
+
+    if(isLoading){
+        return <div>Loading</div>
+      }
     
     let filteredPictures;
 

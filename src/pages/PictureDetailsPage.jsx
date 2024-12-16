@@ -35,9 +35,9 @@ function PictureDetailsPage() {
     }
 
 
-    if (!picture) {
-        return <Navigate to="/HomePage" />;
-    }
+    // if (!picture) {
+    //     return <Navigate to="/HomePage" />;
+    // }
 
     return (
         <>

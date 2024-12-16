@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-	baseURL: "https://unit-3-project-c5faaab51857.herokuapp.com/",
+	baseURL: "http://localhost:8080",
 	headers:{
 		'Content-Type': 'application/json',
 	},
@@ -9,9 +9,8 @@ const api = axios.create({
 
 api.interceptors.request.use(
 	(config)=>{
-		const apiKey = "628293b2a66fe053721ccb3467f8f3739de2f7f090b793a1de3928ea19d0fabb";
 		if(config.url){
-			config.url = `${config.url}?api_key=${apiKey}`;
+			config.url = `${config.url}`;
 		}
 		return config;
 	},
